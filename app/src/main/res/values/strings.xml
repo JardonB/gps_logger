@@ -11,6 +11,8 @@
     <string name="pref_log_length_title">Log Length</string>
     <string name="logging_started">GPS logging started</string>
     <string name="logging_stopped">GPS logging stopped</string>
+    <string name="notification_logging">Logging GPS location…</string>
+    <string name="notification_update">Points logged: %1$d | Last: %2$s, %3$s</string>
     <string name="permission_denied">Location permission is required to log GPS data.</string>
     <string name="background_permission_hint">Please grant \'Allow all the time\' location permission for background logging.</string>
     <string name="coordinates_none">No location recorded yet</string>

@@ -40,6 +40,8 @@ class LocationService : Service() {
         const val CHANNEL_ID = "gps_logger_channel"
         const val PREF_INTERVAL = "logging_interval"
         const val PREF_LOG_LENGTH = "log_length"
+        // Minimum update interval is half the requested interval to allow slight early updates
+        private const val MIN_INTERVAL_DIVISOR = 2L
     }
 
     private lateinit var fusedLocationClient: FusedLocationProviderClient
@@ -87,7 +89,7 @@ class LocationService : Service() {
         }
 
         val locationRequest = LocationRequest.Builder(Priority.PRIORITY_HIGH_ACCURACY, intervalMs)
-            .setMinUpdateIntervalMillis(intervalMs / 2)
+            .setMinUpdateIntervalMillis(intervalMs / MIN_INTERVAL_DIVISOR)
             .build()
 
         try {
@@ -101,7 +103,7 @@ class LocationService : Service() {
             return
         }
 
-        startForeground(NOTIFICATION_ID, buildNotification("Logging GPS location..."))
+        startForeground(NOTIFICATION_ID, buildNotification(getString(R.string.notification_logging)))
     }
 
     private fun onLocationReceived(location: Location) {
@@ -121,7 +123,12 @@ class LocationService : Service() {
         val notificationManager = getSystemService(NOTIFICATION_SERVICE) as NotificationManager
         notificationManager.notify(
             NOTIFICATION_ID,
-            buildNotification("Points logged: $pointCount | Last: ${"%.5f".format(location.latitude)}, ${"%.5f".format(location.longitude)}")
+            buildNotification(getString(
+                R.string.notification_update,
+                pointCount,
+                "%.5f".format(location.latitude),
+                "%.5f".format(location.longitude)
+            ))
         )
 
         val broadcastIntent = Intent(ACTION_LOCATION_UPDATE).apply {

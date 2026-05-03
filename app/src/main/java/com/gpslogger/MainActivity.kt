@@ -20,15 +20,19 @@ import com.gpslogger.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
 
+    companion object {
+        private val NO_VALUE = Double.NaN
+    }
+
     private lateinit var binding: ActivityMainBinding
     private var isLogging = false
     private var currentFilePath: String = ""
 
     private val locationReceiver = object : BroadcastReceiver() {
         override fun onReceive(context: Context, intent: Intent) {
-            val lat = intent.getDoubleExtra(LocationService.EXTRA_LATITUDE, Double.NaN)
-            val lon = intent.getDoubleExtra(LocationService.EXTRA_LONGITUDE, Double.NaN)
-            val ele = intent.getDoubleExtra(LocationService.EXTRA_ELEVATION, Double.NaN)
+            val lat = intent.getDoubleExtra(LocationService.EXTRA_LATITUDE, NO_VALUE)
+            val lon = intent.getDoubleExtra(LocationService.EXTRA_LONGITUDE, NO_VALUE)
+            val ele = intent.getDoubleExtra(LocationService.EXTRA_ELEVATION, NO_VALUE)
             val filePath = intent.getStringExtra(LocationService.EXTRA_FILE_PATH) ?: ""
             val count = intent.getIntExtra(LocationService.EXTRA_POINT_COUNT, 0)
 

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">GPS Logger</string>
+    <string name="start_logging">Start Logging</string>
+    <string name="stop_logging">Stop Logging</string>
+    <string name="status_idle">Idle — not logging</string>
+    <string name="status_logging">Logging GPS location…</string>
+    <string name="status_header">Status</string>
+    <string name="settings_title">Settings</string>
+    <string name="pref_interval_title">Logging Interval</string>
+    <string name="pref_log_length_title">Log Length</string>
+    <string name="logging_started">GPS logging started</string>
+    <string name="logging_stopped">GPS logging stopped</string>
+    <string name="permission_denied">Location permission is required to log GPS data.</string>
+    <string name="background_permission_hint">Please grant \'Allow all the time\' location permission for background logging.</string>
+    <string name="coordinates_none">No location recorded yet</string>
+    <string name="coordinates_label">Lat: %1$s  Lon: %2$s  Ele: %3$s m</string>
+    <string name="file_path_label">File: %1$s</string>
+    <string name="points_logged_label">Points logged: %1$d</string>
+
+    <string-array name="interval_entries">
+        <item>5 seconds</item>
+        <item>10 seconds</item>
+        <item>30 seconds</item>
+        <item>1 minute</item>
+        <item>5 minutes</item>
+    </string-array>
+
+    <string-array name="interval_values">
+        <item>5000</item>
+        <item>10000</item>
+        <item>30000</item>
+        <item>60000</item>
+        <item>300000</item>
+    </string-array>
+
+    <string-array name="length_entries">
+        <item>30 minutes</item>
+        <item>1 hour</item>
+        <item>2 hours</item>
+        <item>4 hours</item>
+        <item>Unlimited</item>
+    </string-array>
+
+    <string-array name="length_values">
+        <item>1800000</item>
+        <item>3600000</item>
+        <item>7200000</item>
+        <item>14400000</item>
+        <item>0</item>
+    </string-array>
+</resources>

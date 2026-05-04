@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">GPS Logger</string>
+    <string name="start_logging">Start Logging</string>
+    <string name="stop_logging">Stop Logging</string>
+    <string name="status_idle">Idle — not logging</string>
+    <string name="status_logging">Logging GPS location…</string>
+    <string name="status_header">Status</string>
+    <string name="settings_title">Settings</string>
+    <string name="pref_interval_title">Logging Interval</string>
+    <string name="pref_log_length_title">Log Length</string>
+    <string name="logging_started">GPS logging started</string>
+    <string name="logging_stopped">GPS logging stopped</string>
+    <string name="notification_logging">Logging GPS location…</string>
+    <string name="notification_update">Points logged: %1$d | Last: %2$s, %3$s</string>
+    <string name="permission_denied">Location permission is required to log GPS data.</string>
+    <string name="background_permission_hint">Please grant \'Allow all the time\' location permission for background logging.</string>
+    <string name="coordinates_none">No location recorded yet</string>
+    <string name="coordinates_label">Lat: %1$s  Lon: %2$s  Ele: %3$s m</string>
+    <string name="file_path_label">File: %1$s</string>
+    <string name="points_logged_label">Points logged: %1$d</string>
+
+</resources>
